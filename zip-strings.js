@@ -1,3 +1,4 @@
+/* First Solution (just copied from the other bootcampers, such a cheater!)
 function zipStrings(strA, strB) {
   //Convert given strings to arrays;
   let arrA = strA.split("");
@@ -22,3 +23,19 @@ function zipStrings(strA, strB) {
   //Return that string
   return zippedString;
 }
+*/
+
+//A refactored solution, based on the other solution and avoiding creating arrays
+function zipStrings(strA, strB) {
+  //Create empty string to store new zippedString in it;
+  let zippedString = "";
+  //Start for-loop with a Math.max-function in the condition; the Math.max-function tells the loop, which string.length is longer and is the condition to stop the loop;
+  //Add values of the current index of both strings to zippedString
+  for (let i = 0; i < Math.max(strA.length, strB.length); i++) {
+    zippedString += strA[i];
+    zippedString += strB[i];
+  }
+  //Return string and remove the undefined-indexes using a regular expression;
+  return zippedString.replace(/[undefined]/g, "");
+}
+//Voilà, all tests passed 👍🏻

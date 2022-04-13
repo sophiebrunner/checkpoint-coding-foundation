@@ -1,5 +1,5 @@
 class SumApp {
-  constructor(numbers) {
+  constructor() {
     this.numbers = [];
   }
 
